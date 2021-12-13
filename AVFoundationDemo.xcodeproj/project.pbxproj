@@ -14,6 +14,7 @@
 		3B172C6527605ECA009C06DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B172C6427605ECA009C06DF /* Assets.xcassets */; };
 		3B172C6827605ECA009C06DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B172C6627605ECA009C06DF /* LaunchScreen.storyboard */; };
 		3B172C6B27605ECA009C06DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B172C6A27605ECA009C06DF /* main.m */; };
+		3B89B26B27673FB90056D92C /* AVPlayRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B89B26A27673FB90056D92C /* AVPlayRecord.swift */; };
 		3B9D00EC276094670070602B /* AVSpeechController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9D00EB276094670070602B /* AVSpeechController.m */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,8 @@
 		3B172C6727605ECA009C06DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B172C6927605ECA009C06DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B172C6A27605ECA009C06DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3B89B26927673FB80056D92C /* AVFoundationDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AVFoundationDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		3B89B26A27673FB90056D92C /* AVPlayRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayRecord.swift; sourceTree = "<group>"; };
 		3B9D00E8276086060070602B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		3B9D00EA276094670070602B /* AVSpeechController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVSpeechController.h; sourceTree = "<group>"; };
 		3B9D00EB276094670070602B /* AVSpeechController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVSpeechController.m; sourceTree = "<group>"; };
@@ -69,9 +72,11 @@
 		3B172C5727605EC6009C06DF /* AVFoundationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				3B89B26827673DB70056D92C /* 播放和录制音频 */,
 				3B9D00E9276090240070602B /* AVFoundation入门 */,
 				3B172C5827605EC6009C06DF /* AppDelegate.h */,
 				3B172C5927605EC6009C06DF /* AppDelegate.m */,
+				3B89B26927673FB80056D92C /* AVFoundationDemo-Bridging-Header.h */,
 				3B172C5E27605EC6009C06DF /* ViewController.h */,
 				3B172C5F27605EC6009C06DF /* ViewController.m */,
 				3B172C6127605EC6009C06DF /* Main.storyboard */,
@@ -82,6 +87,14 @@
 				3B9D00E8276086060070602B /* PrefixHeader.pch */,
 			);
 			path = AVFoundationDemo;
+			sourceTree = "<group>";
+		};
+		3B89B26827673DB70056D92C /* 播放和录制音频 */ = {
+			isa = PBXGroup;
+			children = (
+				3B89B26A27673FB90056D92C /* AVPlayRecord.swift */,
+			);
+			path = "播放和录制音频";
 			sourceTree = "<group>";
 		};
 		3B9D00E9276090240070602B /* AVFoundation入门 */ = {
@@ -143,6 +156,7 @@
 				TargetAttributes = {
 					3B172C5427605EC6009C06DF = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1300;
 					};
 				};
 			};
@@ -228,6 +242,7 @@
 				3B172C5A27605EC6009C06DF /* AppDelegate.m in Sources */,
 				3B9D00EC276094670070602B /* AVSpeechController.m in Sources */,
 				3B172C6B27605ECA009C06DF /* main.m in Sources */,
+				3B89B26B27673FB90056D92C /* AVPlayRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +386,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8CEF2A8UUW;
@@ -391,6 +407,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ggLearn.AVFoundationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AVFoundationDemo/AVFoundationDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -401,6 +420,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8CEF2A8UUW;
@@ -421,6 +441,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ggLearn.AVFoundationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AVFoundationDemo/AVFoundationDemo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
